@@ -28,18 +28,7 @@ function render() {
   document.getElementById('task-board').innerHTML = resultHTML;
 }
 
-//메뉴의 언더라인
-// menus.forEach(menu =>
-//     menu.addEventListener('click', e => horizontalIndicator(e))
-//   );
-
-//   function horizontalIndicator(e) {
-//     underline.style.left = e.currentTarget.offsetLeft + 'px';
-//     underline.style.width = e.currentTarget.offsetWidth + 'px';
-//     underline.style.top =
-//       e.currentTarget.offsetTop + e.currentTarget.offsetHeight + 'px';
-//   }
-
+//메뉴 언더라인
 menus.forEach(menu =>
   menu.addEventListener('click', e => horizontalIndicator(e))
 );
