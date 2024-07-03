@@ -79,23 +79,40 @@ function render() {
   for (let i = 0; i < list.length; i++) {
     if (list[i].isComplete == true) {
       resultHTML += `<div class="task task-done">
-              <div>${list[i].taskContent}</div>
+              <div>${list[i].taskContent} </div>
               <div>
-                <button onClick="toggleBtn('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
-                <button onClick="deleteBtn('${list[i].id}')"><i class="fa-solid fa-trash"></i></button>
+                <i class="fa-solid fa-rotate-left" onClick="toggleBtn('${list[i].id}')"></i>
+                <i class="fa-solid fa-trash" onClick="deleteBtn('${list[i].id}')"></i>
               </div>
             </div>`;
     } else {
-      resultHTML += `<div class="task">
+      resultHTML += `<div class="task" onclick='setDate()'>
                 <div>${list[i].taskContent}</div>
                 <div>
-                  <button onClick="toggleBtn('${list[i].id}')"><i class="fa-solid fa-check"></i></button>
-                  <button onClick="deleteBtn('${list[i].id}')"><i class="fa-solid fa-trash"></i></button>
+                  <i class="fa-solid fa-calendar-days" onClick='dueDate()'></i>
+                  <i class="fa-solid fa-check" onClick="toggleBtn('${list[i].id}')"></i>
+                  <i class="fa-solid fa-trash" onClick="deleteBtn('${list[i].id}')"></i>
                 </div>
               </div>`;
     }
   }
   document.getElementById('task-board').innerHTML = resultHTML;
+}
+
+// 마감일 지정
+function dueDate() {
+  let myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    keyboard: false,
+  });
+  myModal.show();
+}
+
+function saveDate() {
+  // let selectedDate = document.getElementById('date-input').value;  실행방법 찾는중
+  let myModal = bootstrap.Modal.getInstance(
+    document.getElementById('exampleModal')
+  );
+  myModal.hide();
 }
 
 function toggleBtn(id) {

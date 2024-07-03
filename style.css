@@ -48,3 +48,12 @@ a {
 .task-done {
   background: lightgray;
 }
+
+i {
+  padding-left: 10px;
+  font-size: 20px;
+}
+i:hover {
+  cursor: pointer;
+  color: rgb(242, 112, 112);
+}

@@ -46,6 +46,48 @@
             </div> -->
           </div>
         </div>
+        <!-- 모달창 -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">마감일</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <p>제발 반드시.. 이때까지 끝내기를</p>
+                <input type="date" id="date-input" />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  닫기
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onClick="saveDate()"
+                >
+                  저장
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </section>
 
