@@ -44,3 +44,7 @@ a {
   padding: 1em;
   border-bottom: 1px dashed #676767;
 }
+
+.task-done {
+  background: lightgray;
+}
