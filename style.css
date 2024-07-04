@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Jua&family=Sunflower:wght@300&display=swap');
+
+* {
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
 body {
   margin: 0;
   background: url(images/background-sky.avif);
@@ -14,6 +20,9 @@ a {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.input-area {
+  margin-bottom: 10px;
 }
 .task-area {
   border: 1px solid black;
@@ -50,10 +59,31 @@ a {
 }
 
 i {
-  padding-left: 10px;
+  padding-left: 15px;
   font-size: 20px;
 }
 i:hover {
   cursor: pointer;
   color: rgb(242, 112, 112);
+}
+
+.pinned-task {
+  background: yellow;
+  font-weight: 600;
+}
+
+.showDueDate {
+  display: none;
+  margin: 0;
+}
+
+@media (min-width: 360px) and (max-width: 767px) {
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+  .input-area {
+    display: flex;
+    justify-content: center;
+  }
 }

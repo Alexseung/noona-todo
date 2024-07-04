@@ -39,6 +39,7 @@
           <div id="task-board">
             <!-- <div class="task">
               <div>집에가자</div>
+              <p class='showDueDate'></p>
               <div>
                 <button>Check</button>
                 <button>Delete</button>
@@ -46,7 +47,7 @@
             </div> -->
           </div>
         </div>
-        <!-- 모달창 -->
+        <!-- 마감일 모달창 -->
         <div
           class="modal fade"
           id="exampleModal"
@@ -80,7 +81,7 @@
                 <button
                   type="button"
                   class="btn btn-primary"
-                  onClick="saveDate()"
+                  onClick="saveDate('${list[i].id}')"
                 >
                   저장
                 </button>
