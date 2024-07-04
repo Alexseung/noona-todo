@@ -1,3 +1,7 @@
+let hrs = document.getElementById('hrs');
+let min = document.getElementById('min');
+let sec = document.getElementById('sec');
+
 let underline = document.getElementById('uderlinie');
 let menus = document.querySelectorAll('section.task-area a');
 
@@ -102,6 +106,12 @@ function addTask() {
   if (taskInput.value == '') {
     alert('할 일을 써넣으셔야죠!');
     return;
+  }
+  let isDuplicate = taskList.some(task => task.taskContent === taskInput.value); //some은 조건에 맞는게 하나라도 있으면 true반환
+  if (isDuplicate) {
+    alert('이미 추가된 할 일입니다!');
+    taskInput.value = '';
+    return; //render();를 처음에 넣어버려서 수정하기까지 시간 낭비함..
   }
   let task = {
     id: randomIdGenerate(),
@@ -229,6 +239,18 @@ function deleteBtn(id) {
 function randomIdGenerate() {
   return '_' + Math.random().toString(36).substr(2, 9);
 }
+
+//시계
+setInterval(() => {
+  let currentTime = new Date();
+
+  hrs.innerHTML =
+    (currentTime.getHours() < 10 ? '0' : '') + currentTime.getHours();
+  min.innerHTML =
+    (currentTime.getMinutes() < 10 ? '0' : '') + currentTime.getMinutes();
+  sec.innerHTML =
+    (currentTime.getSeconds() < 10 ? '0' : '') + currentTime.getSeconds();
+}, 1000);
 
 //메뉴 언더라인
 menus.forEach(menu =>
